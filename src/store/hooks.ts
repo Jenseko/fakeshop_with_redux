@@ -1,7 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector, type TypedUseSelectorHook } from "react-redux";
 
-import { AppDispatch } from "./store.ts";
+import { AppDispatch, RootState } from "./store.ts";
 
 type DispatchFunction = () => AppDispatch;
 
-const useCartDispatch: DispatchFunction = useDispatch;
+// Custom dispatch hook
+export const useCartDispatch: DispatchFunction = useDispatch;
+
+// Custom selector hook
+export const useCartSelector: TypedUseSelectorHook<RootState> = useSelector; 
